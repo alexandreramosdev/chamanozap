@@ -1,0 +1,35 @@
+module.exports = {
+  siteMetadata: {
+    title: `Chama no Zap`,
+    description: `Inicie uma conversa no whatapp sem salvar o numero da pessoa.`,
+    author: `@alexandrer_stos`,
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Chama no Zap`,
+        short_name: `Chama Zap`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/whatsapp-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
+  ],
+}
