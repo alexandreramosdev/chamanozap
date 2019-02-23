@@ -23,17 +23,31 @@ const InputFormik = ({ errors, touched, values }) => (
     </div>
 
     <Button.Group size="big">
-      <Button positive type="submit">
+      <Button positive type="submit" disabled={!values.tel}>
         Chamar
       </Button>
       <Button.Or />
-      <Clipboard
-        className="ui button"
-        data-clipboard-text={`https://wa.me/${values.tel}`}
-        button-title="Copie o link e compatilhe "
-      >
-        Copie link
-      </Clipboard>
+      {!values.tel ? (
+        <Clipboard
+          className="ui button disabled"
+          disabled={!values.tel}
+          onSuccess={() => "Link copiado com sucesso!"}
+          data-clipboard-text={`https://wa.me/${values.tel}`}
+          button-title="Copie o link e compatilhe "
+        >
+          Copie link
+        </Clipboard>
+      ) : (
+        <Clipboard
+          className="ui button"
+          disabled={!values.tel}
+          onSuccess={() => console.info("Link copiado com sucesso!")}
+          data-clipboard-text={`https://wa.me/${values.tel}`}
+          button-title="Copie o link e compatilhe "
+        >
+          Copie link
+        </Clipboard>
+      )}
     </Button.Group>
   </Form>
 )
