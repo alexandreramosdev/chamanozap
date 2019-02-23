@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import img from "../images/whatsapp-icon.png"
@@ -16,18 +15,11 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         textAlign: "center",
+        color: `white`,
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <img src={img} alt="" width="40" /> {siteTitle}
-        </Link>
+        <img src={img} alt="" width="40" /> {siteTitle}
       </h1>
     </div>
   </header>

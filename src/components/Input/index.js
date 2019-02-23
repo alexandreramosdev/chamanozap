@@ -9,16 +9,20 @@ const FInput = ({ field, ...props }) => <Input {...field} {...props} />
 const InputFormik = ({ errors, touched, values }) => (
   <Form>
     <div style={{ padding: "5px" }}>
-      <small style={{ display: "block" }}>
-        Digite o n° ( Ex.:55 11 97718-5120 )
-      </small>
-      <Field name="tel" component={FInput} placeholder="5511977185120" />
+      <p style={{ color: "gray" }}>Digite o n° ( Ex.:55 11 97718-5120 )</p>
+      <Field
+        size="huge"
+        name="tel"
+        type="tel"
+        component={FInput}
+        placeholder="5511977185120"
+      />
       {errors.tel && touched.tel && (
         <p style={{ color: "red" }}>{errors.tel}</p>
       )}
     </div>
 
-    <Button.Group>
+    <Button.Group size="big">
       <Button positive type="submit">
         Chamar
       </Button>

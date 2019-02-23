@@ -4,6 +4,7 @@ module.exports = {
     description: `Inicie uma conversa no whatapp sem salvar o numero da pessoa.`,
     author: `@alexandrer_stos`,
   },
+  pathPrefix: "/chamanozap",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -20,11 +21,12 @@ module.exports = {
       options: {
         name: `Chama no Zap`,
         short_name: `Chama Zap`,
-        start_url: `/`,
+        start_url: `/chamanozap`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/whatsapp-icon.png`, // This path is relative to the root of the site.
+        prefer_related_applications: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

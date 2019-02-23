@@ -8,7 +8,10 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h3>INICIE UMA CONVERSA NO WHATSAPP AGORA MESMO</h3>
+    <h3>
+      Inicie uma conversa no
+      <br /> WhatsApp Agora
+    </h3>
     <InputFormik />
   </Layout>
 )

@@ -30,10 +30,10 @@ const Layout = ({ children }) => (
           }}
         >
           <main style={{ textAlign: "center" }}>{children}</main>
-          <footer style={{ textAlign: "center", marginTop: "auto" }}>
+          <footer style={{ textAlign: "center", marginTop: "14px" }}>
             © {new Date().getFullYear()}, Developer by
             {` `}
-            <a href="https://alexandrerstos.github.io">Alexandre Ramos</a>
+            <a href="https://github.com/AlexandreRStos">Alexandre Ramos</a>
           </footer>
         </div>
       </>
