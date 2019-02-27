@@ -1,4 +1,7 @@
-html {
+import { createGlobalStyle } from "styled-components"
+
+const GlobalStyles = createGlobalStyle`
+  html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -25,3 +28,6 @@ summary,
 small {
   display: block;
 }
+`
+
+export default GlobalStyles

@@ -1,28 +1,29 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 import img from "../images/whatsapp-icon.png"
+import Image from "./image"
+
+const HeaderStyles = styled.header`
+  background: rebeccapurple;
+  margin-bottom: 1.45rem;
+`
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  text-align: center;
+  color: white;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-        textAlign: "center",
-        color: `white`,
-      }}
-    >
+  <HeaderStyles>
+    <Wrapper>
       <h1 style={{ margin: 0 }}>
-        <img src={img} alt="" width="40" /> {siteTitle}
+        <Image /> {siteTitle}
       </h1>
-    </div>
-  </header>
+    </Wrapper>
+  </HeaderStyles>
 )
 
 Header.propTypes = {
