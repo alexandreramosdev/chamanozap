@@ -23,11 +23,11 @@ const InputFormik = ({ errors, touched, values }) => (
     </div>
 
     <Button.Group size="big">
-      <Button positive type="submit" disabled={!values.tel}>
+      <Button positive type="submit" disabled={errors.tel || !values.tel}>
         Chamar
       </Button>
       <Button.Or />
-      {!values.tel ? (
+      {errors.tel || !values.tel ? (
         <Clipboard
           className="ui button disabled"
           disabled={!values.tel}
@@ -52,7 +52,8 @@ const InputFormik = ({ errors, touched, values }) => (
   </Form>
 )
 
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+// const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const phoneRegExp = /^[1-9]{2,3}[0-9]{2,3}[0-9]{4,5}[0-9]{4,5}$/
 
 const Formik = withFormik({
   mapPropsToValues({ tel }) {
@@ -61,7 +62,7 @@ const Formik = withFormik({
     }
   },
   validationSchema: Yup.object().shape({
-    tel: Yup.string().matches(phoneRegExp, "Numero de telefone Inválido"),
+    tel: Yup.string().matches(phoneRegExp, "Numero de telefone invalido"),
   }),
   handleSubmit: ({ tel }) => {
     window.open(`https://wa.me/${tel}`)
