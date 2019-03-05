@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import img from "../images/whatsapp-icon.png"
 import Image from "./image"
 
 const HeaderStyles = styled.header`

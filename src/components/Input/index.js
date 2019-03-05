@@ -3,19 +3,28 @@ import { withFormik, Form, Field } from "formik"
 import * as Yup from "yup"
 import Clipboard from "react-clipboard.js"
 import { Input, Button } from "semantic-ui-react"
+import SelectCountries from "./selectCountries"
 
 const FInput = ({ field, ...props }) => <Input {...field} {...props} />
 
-const InputFormik = ({ errors, touched, values }) => (
+const InputFormik = ({ errors, touched, values, handleChange, handleBlur }) => (
   <Form>
     <div style={{ padding: "5px" }}>
-      <p style={{ color: "gray" }}>Digite o n° ( Ex.:55 11 97718-5120 )</p>
+      <p style={{ color: "gray" }}>Digite o n° ( Ex. 11 97718-5120 )</p>
+      <SelectCountries
+        value={values.countries}
+        name="countries"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className="ui search selection dropdown"
+        style={{ display: "block", margin: "0 auto 5px" }}
+      />
       <Field
         size="huge"
         name="tel"
         type="tel"
         component={FInput}
-        placeholder="5511977185120"
+        placeholder="11 97718-5120"
       />
       {errors.tel && touched.tel && (
         <p style={{ color: "red" }}>{errors.tel}</p>
@@ -42,20 +51,21 @@ const InputFormik = ({ errors, touched, values }) => (
   </Form>
 )
 
-// const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-const phoneRegExp = /^[1-9]{2,3}[0-9]{2,3}[0-9]{4,5}[0-9]{4,5}$/
+const phoneRegExp = /^[0-9]{2,3}[0-9]{4,5}[0-9]{4,5}$/
 
 const Formik = withFormik({
-  mapPropsToValues({ tel }) {
+  mapPropsToValues({ tel, countries }) {
     return {
       tel: tel || "",
+      countries: countries || "55",
     }
   },
   validationSchema: Yup.object().shape({
     tel: Yup.string().matches(phoneRegExp, "Numero de telefone invalido"),
   }),
-  handleSubmit: ({ tel }) => {
-    window.open(`https://wa.me/${tel}`)
+  handleSubmit: ({ tel, countries }) => {
+    console.log(`Countries:`, countries, `Tel`, tel)
+    // window.open(`https://wa.me/${countries}${tel}`)
   },
 })(InputFormik)
 
