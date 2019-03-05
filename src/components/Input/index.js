@@ -60,6 +60,7 @@ const InputFormik = ({
           }}
           data-clipboard-text={`https://wa.me/${values.countries}${values.tel}`}
           button-title="Copie o link e compatilhe "
+          style={{ transition: "all 400ms linear" }}
         >
           {active ? "link Copiado" : "Copie link"}
         </Clipboard>

@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   height: 100%;
+  font-display:auto;
 }
 body {
   margin: 0;
