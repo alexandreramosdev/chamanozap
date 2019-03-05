@@ -7,7 +7,14 @@ import SelectCountries from "./selectCountries"
 
 const FInput = ({ field, ...props }) => <Input {...field} {...props} />
 
-const InputFormik = ({ errors, touched, values, handleChange, handleBlur }) => {
+const InputFormik = ({
+  errors,
+  touched,
+  values,
+  handleChange,
+  handleBlur,
+  handleReset,
+}) => {
   const [active, setActive] = useState(false)
   return (
     <Form>
@@ -19,7 +26,7 @@ const InputFormik = ({ errors, touched, values, handleChange, handleBlur }) => {
           onChange={handleChange}
           onBlur={handleBlur}
           className="ui search selection dropdown"
-          style={{ display: "block", margin: "0 auto 5px" }}
+          style={{ display: "block", margin: "0 auto 5px", padding: "3px" }}
         />
         <Field
           size="huge"
@@ -44,13 +51,22 @@ const InputFormik = ({ errors, touched, values, handleChange, handleBlur }) => {
               ? "ui button disabled"
               : "ui button"
           }`}
-          onSuccess={() => setActive(true)}
+          onSuccess={() => {
+            setActive(true)
+            setTimeout(() => {
+              setActive(false)
+              handleReset()
+            }, 5000)
+          }}
           data-clipboard-text={`https://wa.me/${values.countries}${values.tel}`}
           button-title="Copie o link e compatilhe "
         >
           {active ? "link Copiado" : "Copie link"}
         </Clipboard>
       </Button.Group>
+      <p style={{ color: "gray" }}>
+        {active && `https://wa.me/${values.countries}${values.tel}`}
+      </p>
     </Form>
   )
 }
@@ -67,7 +83,8 @@ const Formik = withFormik({
   validationSchema: Yup.object().shape({
     tel: Yup.string().matches(phoneRegExp, "Numero de telefone invalido"),
   }),
-  handleSubmit: ({ tel, countries }) => {
+  handleSubmit: ({ countries, tel }, { resetForm }) => {
+    resetForm({ tel: "" })
     window.open(`https://wa.me/${countries}${tel}`)
   },
 })(InputFormik)

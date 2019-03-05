@@ -3,10 +3,6 @@ import React from "react"
 const SelectCountries = props => {
   return (
     <select {...props}>
-      <option value="55" selected>
-        Brazil (+55)
-      </option>
-
       <option value="213">Algeria (+213)</option>
       <option value="376">Andorra (+376)</option>
       <option value="244">Angola (+244)</option>
@@ -31,6 +27,7 @@ const SelectCountries = props => {
       <option value="591">Bolivia (+591)</option>
       <option value="387">Bosnia Herzegovina (+387)</option>
       <option value="267">Botswana (+267)</option>
+      <option value="55">Brazil (+55)</option>
       <option value="673">Brunei (+673)</option>
       <option value="359">Bulgaria (+359)</option>
       <option value="226">Burkina Faso (+226)</option>
