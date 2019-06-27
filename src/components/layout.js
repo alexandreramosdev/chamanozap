@@ -48,7 +48,7 @@ const Layout = ({ children }) => (
           <Main>{children}</Main>
           <Footer>
             © {new Date().getFullYear()}, Developed by{` `}
-            <a href="https://github.com/Alexandreramosdev">Alexandre Ramos</a>
+            <a href="https://alexandreramos.netlify.com">Alexandre Ramos</a>
           </Footer>
         </Wrapper>
         <GlobalStyles />
