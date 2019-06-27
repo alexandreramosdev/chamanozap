@@ -5,7 +5,6 @@ import Image from "./image"
 
 const HeaderStyles = styled.header`
   background: rebeccapurple;
-  margin-bottom: 1.45rem;
 `
 const Wrapper = styled.div`
   margin: 0 auto;

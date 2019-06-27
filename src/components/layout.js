@@ -3,23 +3,32 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import styled from "styled-components"
+import phone from '../images/phone.svg'
+import bgwhats from '../images/background-whatsapp-7.jpg'
 
 import Header from "./header"
 import GlobalStyles from "../styles/globalStyles"
-import "semantic-ui-css/semantic.min.css"
 
-const Wrapper = styled.div`
-  margin: 0 auto;
-  max-width: 960;
-  padding: 0px 1.0875rem 1.45rem;
+const Wrapper = styled.div`  
   padding-top: 0;
-  height: 100%;
+  min-height: 100vh;
   text-align: center;
+ 
+  background:  url(${phone}) center/ 350px no-repeat, url(${bgwhats}) center / cover no-repeat !important;  
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 
 const Footer = styled.footer`
   margin-top: 14px;
 `
+const Main = styled.main`
+ 
+ 
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -34,15 +43,15 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <GlobalStyles />
         <Header siteTitle={data.site.siteMetadata.title} />
         <Wrapper>
-          <main>{children}</main>
+          <Main>{children}</Main>
           <Footer>
             © {new Date().getFullYear()}, Developed by{` `}
-            <a href="https://github.com/AlexandreRStos">Alexandre Ramos</a>
+            <a href="https://github.com/Alexandreramosdev">Alexandre Ramos</a>
           </Footer>
         </Wrapper>
+        <GlobalStyles />
       </>
     )}
   />

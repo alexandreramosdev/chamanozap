@@ -25,7 +25,7 @@ const InputFormik = ({
           name="countries"
           onChange={handleChange}
           onBlur={handleBlur}
-          className="ui search selection dropdown"
+          className=""
           style={{ display: "block", margin: "0 auto 5px", padding: "3px" }}
         />
         <Field
@@ -41,7 +41,9 @@ const InputFormik = ({
       </div>
 
       <Button.Group size="big">
-        <Button positive type="submit" disabled={!errors.tel && !values.tel}>
+        <Button positive type="submit" disabled={!errors.tel && !values.tel}
+          style={{ boxShadow: '0 10px 14px rgba(0,0,0,0.2)' }}
+        >
           Chamar
         </Button>
         <div className="or" data-text="ou" />
@@ -50,7 +52,7 @@ const InputFormik = ({
             (!errors.tel && !values.tel) || active
               ? "ui button disabled"
               : "ui button"
-          }`}
+            }`}
           onSuccess={() => {
             setActive(true)
             setTimeout(() => {
@@ -60,7 +62,7 @@ const InputFormik = ({
           }}
           data-clipboard-text={`https://wa.me/${values.countries}${values.tel}`}
           button-title="Copie o link e compatilhe "
-          style={{ transition: "all 400ms linear" }}
+          style={{ transition: "all 400ms linear", boxShadow: '0 10px 14px rgba(0,0,0,0.2)' }}
         >
           {active ? "link Copiado" : "Copie link"}
         </Clipboard>
