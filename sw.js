@@ -26,30 +26,32 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-5f0705fcae8996e81ae8.js"
+    "url": "webpack-runtime-50528f4171b882cf18f1.js"
   },
   {
-    "url": "app-e6495319a540f61dcb70.js"
+    "url": "app-fe92e9f6974529ddd2a0.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-e8533798136e7328c18e.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-668a5c05bbc308259216.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7853fe4e5b88d561f5c737bf9c27fe68"
+    "revision": "cde337291d8caa3e2a1a98fc812fdce6"
   },
   {
-    "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json"
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "d9b1ae28952c651227af96a23cf3061c"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "43a43df460cc8486afc6f9c2eb3824e8"
+    "revision": "6b3103a406d12b06ebfc82c3b150a3bf"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, workbox.strategies.networkFirst(), 'GET');
 workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, workbox.strategies.staleWhileRevalidate(), 'GET');
 
