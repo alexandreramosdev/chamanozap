@@ -44,6 +44,7 @@ const Main = styled.div`
 
   h1 {
     font-size: 22px;
+    color: rgba(0, 0, 0, 0.8);
   }
 
   h1, h4 {
@@ -58,15 +59,18 @@ const Wrapper = styled.div`
   color: rgba(0, 0, 0, 0.7);
   > h4 {
     margin-bottom: 8px;
+    font-size: 15px;
   }
   > p {
     margin-bottom: 4px;
     color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
   }
 `
 const Footer = styled.footer`
   margin-top: 14px;
   font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
 `
 
 const IndexPage = () => (
@@ -80,12 +84,10 @@ const IndexPage = () => (
     </h1>
     <InputFormik />
     <Wrapper>
-      <h4>Especialmente útil em situações como:</h4>
-      <p>
-        - Você precisa enviar uma mensagem para alguém, mas você não quer
-        salvá-lo no contato?
+      <h4>Especialmente útil em situação como:</h4>
+      <p>- Você precisa enviar uma mensagem para alguém, mas você não quer
+        salvá-lo na agenda de contato!
       </p>
-      <p>- Você quer começar uma conversa com você mesmo?</p>
     </Wrapper>
     <Footer>
       © {new Date().getFullYear()}, Developed by{` `}
