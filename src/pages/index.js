@@ -2,7 +2,6 @@ import React from "react"
 import styled, {createGlobalStyle} from "styled-components"
 
 import InputFormik from "../components/Input"
-
 import SEO from "../components/seo"
 
 const Global = createGlobalStyle`

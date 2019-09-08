@@ -12,11 +12,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Chama no Zap`,
+        lang: `pt-BR`,
         short_name: `Chama Zap`,
         start_url: `/chamanozap`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `standalone`,
+        display: `browser`,
         icon: `src/images/whatsapp-icon.png`, // This path is relative to the root of the site.
         prefer_related_applications: true,
       },
