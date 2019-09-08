@@ -67,6 +67,7 @@ const Wrapper = styled.div`
 `
 const Footer = styled.footer`
   margin-top: 14px;
+  font-size: 14px;
 `
 
 const IndexPage = () => (

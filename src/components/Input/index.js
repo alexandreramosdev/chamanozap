@@ -2,8 +2,8 @@ import React, { useState} from 'react'
 import styled from 'styled-components'
 import { navigate } from '@reach/router'
 import 'react-phone-number-input/style.css'
-import 'react-responsive-ui/style.css'
-import PhoneInput from 'react-phone-number-input/react-responsive-ui'
+// import 'react-responsive-ui/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const Button = styled.button`
   background-color: #1ebea5;
