@@ -23,6 +23,7 @@ const Button = styled.button`
   }
 `;
 
+
 const InputWhats = () => {
   const [phone, setPhone ] = useState('')
 
@@ -39,6 +40,7 @@ const InputWhats = () => {
         placeholder="Enter number Whatsapp"
         value={ phone }
         onChange={ phone => setPhone(phone) } 
+        inputClassName='inputStyle'        
       />
       
       <Button onClick={handleSubmit} >

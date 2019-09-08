@@ -13,6 +13,12 @@ const Global = createGlobalStyle`
     background-color: #fbfbfb;
   }
 
+  html,
+  body,
+  #___gatsby{
+    min-height: 100vh;
+  }
+
   body {
     font-family: sans-serif;
     font-weight: 200;
@@ -21,13 +27,17 @@ const Global = createGlobalStyle`
   h1, h4 {
     font-weight: 400;
   }
+
+  .inputStyle {
+    padding: 10px !important;
+    line-height: 2;
+  }
+
 `;
 
-const Main = styled.div`  
-  padding-top: 0;
-  min-height: 100vh;
+const Main = styled.div`
+  height: 100vh;
   text-align: center;
-  height: 720px;
   display: flex;
   justify-content: center;
   align-items: center;
