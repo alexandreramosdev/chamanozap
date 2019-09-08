@@ -1,10 +1,46 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {createGlobalStyle} from "styled-components"
 
-import Layout from "../components/layout"
 import InputFormik from "../components/Input"
 
 import SEO from "../components/seo"
+
+const Global = createGlobalStyle`
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fbfbfb;
+  }
+
+  body {
+    font-family: sans-serif;
+    font-weight: 200;
+  }
+
+  h1, h4 {
+    font-weight: 400;
+  }
+`;
+
+const Main = styled.div`  
+  padding-top: 0;
+  min-height: 100vh;
+  text-align: center;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h1, h4 {
+    font-weight: 400;
+  }
+`
 
 const Wrapper = styled.div`
   max-width: 260px;
@@ -19,16 +55,19 @@ const Wrapper = styled.div`
     color: rgba(0, 0, 0, 0.6);
   }
 `
+const Footer = styled.footer`
+  margin-top: 14px;
+`
 
 const IndexPage = () => (
-  <Layout>
+  <Main>
     <SEO
       title="Chama no Zap"
       keywords={[`whatsapp`, `chama no zap`, `mensseger`]}
     />
-    <h3>
+    <h1>
       Inicie uma conversa no <br /> WhatsApp Agora{" "}
-    </h3>
+    </h1>
     <InputFormik />
     <Wrapper>
       <h4>Especialmente útil em situações como:</h4>
@@ -38,7 +77,12 @@ const IndexPage = () => (
       </p>
       <p>- Você quer começar uma conversa com você mesmo?</p>
     </Wrapper>
-  </Layout>
+    <Footer>
+      © {new Date().getFullYear()}, Developed by{` `}
+     <a href="https://alexandreramos.netlify.com">Alexandre Ramos</a>
+    </Footer>
+    <Global />
+  </Main>
 )
 
 export default IndexPage
