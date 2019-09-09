@@ -87,14 +87,13 @@ const Button = styled.button`
   padding: 5px 10px;
   display: flex;
   align-items: center;
+  background-color: #e0e0e0;
 
   > img {
     width: 10px;
     margin-left: 5px;
   }
 `
-
-
 const IndexPage = () => {
   const [isMobile, setIsMobile] = useState(false)
 
