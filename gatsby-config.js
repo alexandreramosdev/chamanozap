@@ -7,7 +7,13 @@ module.exports = {
   pathPrefix: "/chamanozap",
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,   
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-9519288182365815`
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
