@@ -33,6 +33,11 @@ const Global = createGlobalStyle`
     line-height: 2;
   }
 
+  .react-phone-number-input__icon {
+    width: 36px !important;
+    height: 27px !important;
+    border: none !important;
+  }
 `;
 
 const Main = styled.div`

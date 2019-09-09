@@ -39,10 +39,10 @@ const InputWhats = () => {
       <PhoneInput
         country="BR"
         limitMaxLength
-        placeholder="Enter number Whatsapp"
+        placeholder="Enter Whatsapp number"
         value={ phone }
         onChange={ phone => setPhone(phone) } 
-        inputClassName='inputStyle'        
+        inputClassName='inputStyle'
       />
       
       <Button onClick={handleSubmit} >
