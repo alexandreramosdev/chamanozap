@@ -25,7 +25,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `standalone`,
         icon: `src/images/whatsapp-icon.png`, // This path is relative to the root of the site.
-        prefer_related_applications: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
