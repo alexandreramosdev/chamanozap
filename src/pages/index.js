@@ -9,13 +9,14 @@ const Global = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: #fbfbfb;
+    background-color: #fafafa;
   }
 
   html,
   body,
-  #___gatsby{
-    min-height: 100vh;
+  #___gatsby,
+  div[role="group"][tabindex] {
+    height: 100%;
   }
 
   body {
@@ -35,7 +36,7 @@ const Global = createGlobalStyle`
 `;
 
 const Main = styled.div`
-  height: 100vh;
+  height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -75,13 +76,8 @@ const Footer = styled.footer`
 
 const IndexPage = () => (
   <Main>
-    <SEO
-      title="Chama no Zap"
-      keywords={[`whatsapp`, `chama no zap`, `mensseger`]}
-    />
-    <h1>
-      Inicie uma conversa no <br /> WhatsApp Agora{" "}
-    </h1>
+    <SEO/>
+    <h1>Chamar no WhatsApp agora!</h1>
     <InputFormik />
     <Wrapper>
       <h4>Especialmente útil em situação como:</h4>

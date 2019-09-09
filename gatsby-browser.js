@@ -1,8 +1,7 @@
 exports.onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `Este Webapp tem uma atualização :) 
-
-    Recarregue para exibir a versão mais recente?`
+    `         Tem uma Atualização
+    Recarregue para exibir a versão mais recente!`
   )
 
   if (answer === true) {

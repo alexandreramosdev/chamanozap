@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, title, keywords }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -67,9 +67,10 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `pt-br`,
+  lang: `pt-BR`,
   meta: [],
-  keywords: [],
+  keywords: [`whatsapp`, `chama no zap`, `mensseger`, 'open whatapp'],
+  title: 'Chamar no Zap'
 }
 
 SEO.propTypes = {
