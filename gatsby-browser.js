@@ -10,6 +10,7 @@ exports.onServiceWorkerUpdateReady = () => {
   }
 }
 
+/* 
 exports.onInitialClientRender = () => {  
   // Detecta se o dispositivo está no iOS
   const isIos = () => {
@@ -23,6 +24,5 @@ exports.onInitialClientRender = () => {
     this.setState({ showInstallMessage: true });
   }
 }
-
-
+ */
 
