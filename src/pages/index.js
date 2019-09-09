@@ -79,7 +79,19 @@ const Footer = styled.footer`
   color: rgba(0, 0, 0, 0.7);
 `
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const share = () => {
+    if (navigator.share !== undefined) {
+      navigator.share({
+        title: 'Chamar no Zap',
+        text: 'pwa chamar no zap',
+        url: 'http://chamanozap.netlify.com',
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+    }
+  }
+  return(
   <Main>
     <SEO/>
     <h1>Chamar no WhatsApp agora!</h1>
@@ -94,8 +106,9 @@ const IndexPage = () => (
       © {new Date().getFullYear()}, Developed by{` `}
      <a href="https://alexandreramos.netlify.com">Alexandre Ramos</a>
     </Footer>
+    <button onClick={share}>share</button>
     <Global />
   </Main>
-)
+)}
 
 export default IndexPage
