@@ -1,8 +1,10 @@
-import React from "react"
-import styled, {createGlobalStyle} from "styled-components"
+import React, { useState, useEffect } from "react"
+import styled, { createGlobalStyle } from "styled-components"
 
 import InputFormik from "../components/Input"
 import SEO from "../components/seo"
+
+import ShareIcon from '../images/share-button.svg';
 
 const Global = createGlobalStyle`
   html,
@@ -79,17 +81,39 @@ const Footer = styled.footer`
   color: rgba(0, 0, 0, 0.7);
 `
 
+const Button = styled.button`
+  border: none;
+  margin-top: 20px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+
+  > img {
+    width: 10px;
+    margin-left: 5px;
+  }
+`
+
+
 const IndexPage = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    if (navigator.share !== undefined) {
+      setIsMobile(true)
+    }
+  },[])
+
   const share = () => {
     if (navigator.share !== undefined) {
       navigator.share({
         title: 'Chamar no Zap',
-        text: 'pwa chamar no zap',
+        text: 'App Web chamar no zap',
         url: 'http://chamanozap.netlify.com',
       })
       .then(() => console.log('Successful share'))
       .catch((error) => console.log('Error sharing', error));
-    }
+    } 
   }
   return(
   <Main>
@@ -106,7 +130,7 @@ const IndexPage = () => {
       © {new Date().getFullYear()}, Developed by{` `}
      <a href="https://alexandreramos.netlify.com">Alexandre Ramos</a>
     </Footer>
-    <button onClick={share}>share</button>
+    {isMobile && <Button onClick={share}>share <img src={ShareIcon} /></Button>}
     <Global />
   </Main>
 )}
